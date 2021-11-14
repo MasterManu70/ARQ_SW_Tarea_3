@@ -48,7 +48,7 @@ namespace ARQ_SW_Tarea_3.Views
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.lblFechaVenta = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.txtLimpiar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
@@ -77,16 +77,19 @@ namespace ARQ_SW_Tarea_3.Views
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Location = new System.Drawing.Point(697, 526);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Location = new System.Drawing.Point(12, 526);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
@@ -98,16 +101,19 @@ namespace ARQ_SW_Tarea_3.Views
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Location = new System.Drawing.Point(93, 526);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Location = new System.Drawing.Point(174, 526);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
@@ -121,7 +127,6 @@ namespace ARQ_SW_Tarea_3.Views
             this.txtIdVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtIdVenta.Location = new System.Drawing.Point(12, 500);
             this.txtIdVenta.Name = "txtIdVenta";
-            this.txtIdVenta.ReadOnly = true;
             this.txtIdVenta.Size = new System.Drawing.Size(52, 20);
             this.txtIdVenta.TabIndex = 6;
             // 
@@ -257,21 +262,23 @@ namespace ARQ_SW_Tarea_3.Views
             this.dgvVentas.TabIndex = 18;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
-            // txtLimpiar
+            // btnLimpiar
             // 
-            this.txtLimpiar.Location = new System.Drawing.Point(574, 500);
-            this.txtLimpiar.Name = "txtLimpiar";
-            this.txtLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.txtLimpiar.TabIndex = 19;
-            this.txtLimpiar.Text = "Limpiar";
-            this.txtLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(574, 500);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Visible = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
             // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.txtLimpiar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.lblFechaVenta);
             this.Controls.Add(this.dtpFechaVenta);
@@ -324,6 +331,6 @@ namespace ARQ_SW_Tarea_3.Views
         private System.Windows.Forms.DateTimePicker dtpFechaVenta;
         private System.Windows.Forms.Label lblFechaVenta;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.Button txtLimpiar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

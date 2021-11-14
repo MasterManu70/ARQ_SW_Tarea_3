@@ -48,8 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ClientesRerpotesController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ProductosReportesController.cs" />
     <Compile Include="Controllers\VentasController.cs" />
+    <Compile Include="Controllers\VentasReportesController.cs" />
+    <Compile Include="Models\ClientesModel.cs" />
+    <Compile Include="Models\ProductosModel.cs" />
     <Compile Include="Models\VentasModel.cs" />
+    <Compile Include="Views\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmClientesReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmClientesReportes.Designer.cs">
+      <DependentUpon>FrmClientesReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,12 +77,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmProductosReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmProductosReportes.Designer.cs">
+      <DependentUpon>FrmProductosReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FrmVentas.Designer.cs">
       <DependentUpon>FrmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmVentasReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmVentasReportes.Designer.cs">
+      <DependentUpon>FrmVentasReportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmClientesReportes.resx">
+      <DependentUpon>FrmClientesReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,8 +119,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmProductosReportes.resx">
+      <DependentUpon>FrmProductosReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmVentas.resx">
       <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmVentasReportes.resx">
+      <DependentUpon>FrmVentasReportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

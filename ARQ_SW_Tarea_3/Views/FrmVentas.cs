@@ -16,7 +16,6 @@ namespace ARQ_SW_Tarea_3.Views
     {
         VentasController data = new VentasController();
         List<VentasModel> lista = new List<VentasModel>();
-
         public FrmVentas()
         {
             InitializeComponent();
@@ -43,7 +42,14 @@ namespace ARQ_SW_Tarea_3.Views
         //Consultar
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            lista = data.Consultar();
+            if (!int.TryParse(txtBuscar.Text,out int id) && txtBuscar.Text != String.Empty)
+            {
+                MessageBox.Show("Solo se permiten números enteros como parámetro de búsqueda");
+                txtBuscar.Focus();
+                return;
+            }
+
+            lista = data.Consultar(id);
             
             dgvVentas.Rows.Clear();
 
@@ -92,8 +98,28 @@ namespace ARQ_SW_Tarea_3.Views
 
             VentasModel modelo = new VentasModel();
 
-            if (int.TryParse(txtIdVenta.Text, out int IdVenta))
-                modelo.Id_Venta = IdVenta;
+            if (sender.ToString() == "System.Windows.Forms.Button, Text: Modificar")
+            {
+                if (int.TryParse(txtIdVenta.Text, out int IdVenta))
+                {
+                    if (IdVenta > 0)
+                    {
+                        modelo.Id_Venta = IdVenta;
+                    }
+                    else
+                    {
+                        txtIdVenta.Focus();
+                        MessageBox.Show("El campo ID_Venta debe contener un número entero mayor a 0");
+                        return;
+                    }
+                }
+                else
+                {
+                    txtIdProducto.Focus();
+                    MessageBox.Show("El campo ID_Venta está vacío o no tiene un valor numérico entero");
+                    return;
+                }
+            }
 
             modelo.Id_Cliente = IdCliente;
             modelo.Id_Producto = IdProducto;
@@ -111,6 +137,34 @@ namespace ARQ_SW_Tarea_3.Views
             dtpFechaVenta.Value = DateTime.Now;
 
             btnBuscar_Click(sender, e);
+        }
+
+        //Eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdVenta.Text, out int id))
+            {
+                data.Eliminar(id);
+                btnBuscar_Click(sender, e);
+            }
+            else
+                MessageBox.Show("El campo ID_Venta está vacío o no tiene un valor numérico");
+        }
+
+        //Limpiar campos para datos
+        private void txtLimpiar_Click(object sender, EventArgs e)
+        {
+            txtIdVenta.Clear();
+            txtIdCliente.Clear();
+            txtIdProducto.Clear();
+            txtPrecioVenta.Clear();
+            nudCantidad.Value = 1;
+            dtpFechaVenta.Value = DateTime.Now;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

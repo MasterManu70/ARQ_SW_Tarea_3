@@ -23,5 +23,35 @@ namespace ARQ_SW_Tarea_3
             FrmVentas frmVentas = new FrmVentas();
             frmVentas.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientes frmClientes = new FrmClientes();
+            frmClientes.Show();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProductos frmProductos = new FrmProductos();
+            frmProductos.Show();
+        }
+
+        private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentasReportes frmVentasReportes = new FrmVentasReportes();
+            frmVentasReportes.Show();
+        }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProductosReportes frmProductosReportes = new FrmProductosReportes();
+            frmProductosReportes.Show();
+        }
+
+        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientesReportes frmClientesReportes = new FrmClientesReportes();
+            frmClientesReportes.Show();
+        }
     }
 }

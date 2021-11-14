@@ -8,30 +8,28 @@ using System.Threading.Tasks;
 
 namespace ARQ_SW_Tarea_3.Controllers
 {
-    class VentasController : Conexion
+    class ProductosController : Conexion
     {
-        public List<VentasModel> Consultar(int id)
+        public List<ProductosModel> Consultar(int id)
         {
-            List<VentasModel> lista = new List<VentasModel>();
+            List<ProductosModel> lista = new List<ProductosModel>();
 
             try
             {
                 Conectar();
-                SqlCommand comando = new SqlCommand("sp_ventas_consultar", cnn);
-                comando.Parameters.AddWithValue("@Id_venta", id);
+                SqlCommand comando = new SqlCommand("sp_productos_consultar", cnn);
+                comando.Parameters.AddWithValue("@Id_producto", id);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    VentasModel modelo = new VentasModel()
+                    ProductosModel modelo = new ProductosModel()
                     {
-                        Id_Venta = int.Parse(lector[0] + ""),
-                        Id_Cliente = int.Parse(lector[1] + ""),
-                        Id_Producto = int.Parse(lector[2] + ""),
-                        FechaVenta = Convert.ToDateTime(lector[3] + ""),
-                        Cantidad = int.Parse(lector[4] + ""),
-                        PrecioVenta = Convert.ToDouble(lector[5] + "")
+                        Id_producto = int.Parse(lector[0] + ""),
+                        Producto = lector[1] + "",
+                        Precio = double.Parse(lector[2] + ""),
+                        Existencia = int.Parse(lector[3] + "")
                     };
                     lista.Add(modelo);
                 }
@@ -47,28 +45,26 @@ namespace ARQ_SW_Tarea_3.Controllers
             return lista;
         }
 
-        public void Guardar(VentasModel modelo)
+        public void Guardar(ProductosModel modelo)
         {
             SqlCommand comando;
 
             try
             {
                 Conectar();
-                if (modelo.Id_Venta != 0)
+                if (modelo.Id_producto != 0)
                 {
-                    comando = new SqlCommand("sp_ventas_modificar", cnn);
-                    comando.Parameters.AddWithValue("@Id_venta", modelo.Id_Venta);
+                    comando = new SqlCommand("sp_productos_modificar", cnn);
+                    comando.Parameters.AddWithValue("@Id_producto", modelo.Id_producto);
                 }
                 else
-                    comando = new SqlCommand("sp_ventas_agregar", cnn);
+                    comando = new SqlCommand("sp_productos_agregar", cnn);
 
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@Id_cliente", modelo.Id_Cliente);
-                comando.Parameters.AddWithValue("@Id_producto", modelo.Id_Producto);
-                comando.Parameters.AddWithValue("@FechaVenta", modelo.FechaVenta);
-                comando.Parameters.AddWithValue("@Cantidad", modelo.Cantidad);
-                comando.Parameters.AddWithValue("@PrecioVenta", modelo.PrecioVenta);
+                comando.Parameters.AddWithValue("@Producto", modelo.Producto);
+                comando.Parameters.AddWithValue("@Precio", modelo.Precio);
+                comando.Parameters.AddWithValue("@Existencia", modelo.Existencia);
 
                 comando.ExecuteNonQuery();
             }
@@ -85,8 +81,8 @@ namespace ARQ_SW_Tarea_3.Controllers
             try
             {
                 Conectar();
-                comando = new SqlCommand("sp_ventas_eliminar", cnn);
-                comando.Parameters.AddWithValue("@Id_venta", id);
+                comando = new SqlCommand("sp_productos_eliminar", cnn);
+                comando.Parameters.AddWithValue("@Id_producto", id);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
 
                 comando.ExecuteNonQuery();
