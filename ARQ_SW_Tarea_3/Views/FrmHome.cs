@@ -26,7 +26,7 @@ namespace ARQ_SW_Tarea_3
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmClientes frmClientes = new FrmClientes();
+            FrmUsuarios frmClientes = new FrmUsuarios();
             frmClientes.Show();
         }
 
@@ -50,8 +50,13 @@ namespace ARQ_SW_Tarea_3
 
         private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmClientesReportes frmClientesReportes = new FrmClientesReportes();
+            FrmUsuariosReportes frmClientesReportes = new FrmUsuariosReportes();
             frmClientesReportes.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -35,12 +35,12 @@ namespace ARQ_SW_Tarea_3
             this.ArchivoToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportesToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.reporteDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@ namespace ARQ_SW_Tarea_3
             this.ArchivoToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventasToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.ArchivoToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ArchivoToolStripDropDownButton.Image")));
             this.ArchivoToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -80,29 +80,30 @@ namespace ARQ_SW_Tarea_3
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
-            // clientesToolStripMenuItem
+            // usuariosToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ReportesToolStripDropDownButton
             // 
@@ -110,7 +111,7 @@ namespace ARQ_SW_Tarea_3
             this.ReportesToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeVentasToolStripMenuItem,
             this.reporteDeProductosToolStripMenuItem,
-            this.reporteDeClientesToolStripMenuItem});
+            this.reporteDeUsuariosToolStripMenuItem});
             this.ReportesToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ReportesToolStripDropDownButton.Image")));
             this.ReportesToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ReportesToolStripDropDownButton.Name = "ReportesToolStripDropDownButton";
@@ -132,12 +133,12 @@ namespace ARQ_SW_Tarea_3
             this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
             this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
             // 
-            // reporteDeClientesToolStripMenuItem
+            // reporteDeUsuariosToolStripMenuItem
             // 
-            this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
-            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
-            this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
+            this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
+            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
+            this.reporteDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
@@ -149,6 +150,7 @@ namespace ARQ_SW_Tarea_3
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -164,11 +166,11 @@ namespace ARQ_SW_Tarea_3
         private System.Windows.Forms.ToolStripDropDownButton ReportesToolStripDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
     }
 }
 

@@ -27,7 +27,7 @@ namespace ARQ_SW_Tarea_3.Controllers
                     VentasModel modelo = new VentasModel()
                     {
                         Id_Venta = int.Parse(lector[0] + ""),
-                        Id_Cliente = int.Parse(lector[1] + ""),
+                        Id_Usuario = int.Parse(lector[1] + ""),
                         Id_Producto = int.Parse(lector[2] + ""),
                         FechaVenta = Convert.ToDateTime(lector[3] + ""),
                         Cantidad = int.Parse(lector[4] + ""),
@@ -64,7 +64,7 @@ namespace ARQ_SW_Tarea_3.Controllers
 
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@Id_cliente", modelo.Id_Cliente);
+                comando.Parameters.AddWithValue("@Id_usuario", modelo.Id_Usuario);
                 comando.Parameters.AddWithValue("@Id_producto", modelo.Id_Producto);
                 comando.Parameters.AddWithValue("@FechaVenta", modelo.FechaVenta);
                 comando.Parameters.AddWithValue("@Cantidad", modelo.Cantidad);

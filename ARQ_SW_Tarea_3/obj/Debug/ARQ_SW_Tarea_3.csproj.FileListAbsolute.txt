@@ -22,8 +22,8 @@ D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\bin\Debug\MySql.Data.xml
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.exe.config
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmVentas.resources
-D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmClientes.resources
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmProductos.resources
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmVentasReportes.resources
 D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmProductosReportes.resources
-D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmClientesReportes.resources
+D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmUsuarios.resources
+D:\Projects\C#\Universidad\Cuatrimestre 7\Arquitectura de Software\Unidad 1\ARQ_SW_Tarea_3\ARQ_SW_Tarea_3\obj\Debug\ARQ_SW_Tarea_3.Views.FrmUsuariosReportes.resources

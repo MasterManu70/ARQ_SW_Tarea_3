@@ -24,7 +24,7 @@ namespace ARQ_SW_Tarea_3.Controllers
             //Columnas
             temp.WriteLine("<tr>" +
                 "<td>Id_Venta</td>" +
-                "<td>id_Cliente</td>" +
+                "<td>id_Usuario</td>" +
                 "<td>Id_Producto</td>" +
                 "<td>FechaVenta</td>" +
                 "<td>Cantidad</td>" +
@@ -39,7 +39,7 @@ namespace ARQ_SW_Tarea_3.Controllers
                 temp.WriteLine("<tr>");
 
                 temp.WriteLine("<td>" + item.Id_Venta + "</td>");
-                temp.WriteLine("<td>" + item.Id_Cliente + "</td>");
+                temp.WriteLine("<td>" + item.Id_Usuario + "</td>");
                 temp.WriteLine("<td>" + item.Id_Producto + "</td>");
                 temp.WriteLine("<td>" + item.FechaVenta + "</td>");
                 temp.WriteLine("<td>" + item.Cantidad + "</td>");

@@ -37,8 +37,8 @@ namespace ARQ_SW_Tarea_3.Views
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtIdVenta = new System.Windows.Forms.TextBox();
             this.lblIdVenta = new System.Windows.Forms.Label();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.lblIdCliente = new System.Windows.Forms.Label();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
+            this.lblIdUsuario = new System.Windows.Forms.Label();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.lblIdProducto = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
@@ -140,23 +140,23 @@ namespace ARQ_SW_Tarea_3.Views
             this.lblIdVenta.TabIndex = 7;
             this.lblIdVenta.Text = "ID_Venta";
             // 
-            // txtIdCliente
+            // txtIdUsuario
             // 
-            this.txtIdCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtIdCliente.Location = new System.Drawing.Point(70, 500);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(56, 20);
-            this.txtIdCliente.TabIndex = 8;
+            this.txtIdUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIdUsuario.Location = new System.Drawing.Point(70, 500);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(56, 20);
+            this.txtIdUsuario.TabIndex = 8;
             // 
-            // lblIdCliente
+            // lblIdUsuario
             // 
-            this.lblIdCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(70, 484);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(56, 13);
-            this.lblIdCliente.TabIndex = 9;
-            this.lblIdCliente.Text = "ID_Cliente";
+            this.lblIdUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Location = new System.Drawing.Point(70, 484);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(60, 13);
+            this.lblIdUsuario.TabIndex = 9;
+            this.lblIdUsuario.Text = "ID_Usuario";
             // 
             // txtIdProducto
             // 
@@ -288,8 +288,8 @@ namespace ARQ_SW_Tarea_3.Views
             this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.lblIdProducto);
             this.Controls.Add(this.txtIdProducto);
-            this.Controls.Add(this.lblIdCliente);
-            this.Controls.Add(this.txtIdCliente);
+            this.Controls.Add(this.lblIdUsuario);
+            this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.lblIdVenta);
             this.Controls.Add(this.txtIdVenta);
             this.Controls.Add(this.btnModificar);
@@ -320,8 +320,8 @@ namespace ARQ_SW_Tarea_3.Views
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtIdVenta;
         private System.Windows.Forms.Label lblIdVenta;
-        private System.Windows.Forms.TextBox txtIdCliente;
-        private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.TextBox txtIdUsuario;
+        private System.Windows.Forms.Label lblIdUsuario;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Label lblIdProducto;
         private System.Windows.Forms.NumericUpDown nudCantidad;

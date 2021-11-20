@@ -23,7 +23,7 @@ namespace ARQ_SW_Tarea_3.Views
         private void FrmVentas_Load(object sender, EventArgs e)
         {
             dgvVentas.Columns.Add("Id_Venta", "ID Venta");
-            dgvVentas.Columns.Add("Id_Cliente", "ID Cliente");
+            dgvVentas.Columns.Add("Id_Usuario", "ID Usuario");
             dgvVentas.Columns.Add("Id_Producto", "ID Producto");
             dgvVentas.Columns.Add("FechaVenta", "Fecha Venta");
             dgvVentas.Columns.Add("Cantidad", "Cantidad");
@@ -32,7 +32,7 @@ namespace ARQ_SW_Tarea_3.Views
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtIdVenta.Text = dgvVentas.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtIdCliente.Text = dgvVentas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtIdUsuario.Text = dgvVentas.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtIdProducto.Text = dgvVentas.Rows[e.RowIndex].Cells[2].Value.ToString();
             dtpFechaVenta.Value = Convert.ToDateTime(dgvVentas.Rows[e.RowIndex].Cells[3].Value);
             nudCantidad.Value = Convert.ToInt32(dgvVentas.Rows[e.RowIndex].Cells[4].Value.ToString());
@@ -63,7 +63,7 @@ namespace ARQ_SW_Tarea_3.Views
             {
                 dgvVentas.Rows.Add(
                     item.Id_Venta,
-                    item.Id_Cliente,
+                    item.Id_Usuario,
                     item.Id_Producto,
                     item.FechaVenta,
                     item.Cantidad,
@@ -75,10 +75,10 @@ namespace ARQ_SW_Tarea_3.Views
         //Guardar
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!Int32.TryParse(txtIdCliente.Text, out int IdCliente))
+            if (!Int32.TryParse(txtIdUsuario.Text, out int IdUsuario))
             {
-                txtIdCliente.Focus();
-                MessageBox.Show("El campo ID_Cliente está vacío o no tiene un valor numérico entero");
+                txtIdUsuario.Focus();
+                MessageBox.Show("El campo ID_Usuario está vacío o no tiene un valor numérico entero");
                 return;
             }
 
@@ -121,7 +121,7 @@ namespace ARQ_SW_Tarea_3.Views
                 }
             }
 
-            modelo.Id_Cliente = IdCliente;
+            modelo.Id_Usuario = IdUsuario;
             modelo.Id_Producto = IdProducto;
             modelo.FechaVenta = dtpFechaVenta.Value;
             modelo.Cantidad = int.Parse(nudCantidad.Value + "");
@@ -130,7 +130,7 @@ namespace ARQ_SW_Tarea_3.Views
             data.Guardar(modelo);
 
             txtIdVenta.Clear();
-            txtIdCliente.Clear();
+            txtIdUsuario.Clear();
             txtIdProducto.Clear();
             nudCantidad.Value = 1;
             txtPrecioVenta.Clear();
@@ -155,7 +155,7 @@ namespace ARQ_SW_Tarea_3.Views
         private void txtLimpiar_Click(object sender, EventArgs e)
         {
             txtIdVenta.Clear();
-            txtIdCliente.Clear();
+            txtIdUsuario.Clear();
             txtIdProducto.Clear();
             txtPrecioVenta.Clear();
             nudCantidad.Value = 1;

@@ -12,26 +12,26 @@ using System.Windows.Forms;
 
 namespace ARQ_SW_Tarea_3.Views
 {
-    public partial class FrmClientes : Form
+    public partial class FrmUsuarios : Form
     {
-        ClientesController data = new ClientesController();
-        List<ClientesModel> lista = new List<ClientesModel>();
-        public FrmClientes()
+        UsuariosController data = new UsuariosController();
+        List<UsuariosModel> lista = new List<UsuariosModel>();
+        public FrmUsuarios()
         {
             InitializeComponent();
         }
         private void FrmClientes_Load(object sender, EventArgs e)
         {
-            dgvClientes.Columns.Add("Id_Cliente", "ID Cliente");
-            dgvClientes.Columns.Add("Cliente", "Cliente");
-            dgvClientes.Columns.Add("Domicilio", "Domicilio");
+            dgvClientes.Columns.Add("Id_usuario", "ID Usuario");
+            dgvClientes.Columns.Add("Usuario", "Usuario");
+            dgvClientes.Columns.Add("Correo", "Correo");
             dgvClientes.Columns.Add("Celular", "Celular");
         }
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIdCliente.Text = dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtCliente.Text = dgvClientes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDomicilio.Text = dgvClientes.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtIdUsuario.Text = dgvClientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtUsuario.Text = dgvClientes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtCorreo.Text = dgvClientes.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtCelular.Text = dgvClientes.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
@@ -55,12 +55,12 @@ namespace ARQ_SW_Tarea_3.Views
                 return;
             }
 
-            foreach (ClientesModel item in lista)
+            foreach (UsuariosModel item in lista)
             {
                 dgvClientes.Rows.Add(
-                    item.Id_cliente,
-                    item.Cliente,
-                    item.Domicilio,
+                    item.Id_usuario,
+                    item.Usuario,
+                    item.Correo,
                     item.Celular
                     );
             }
@@ -76,40 +76,50 @@ namespace ARQ_SW_Tarea_3.Views
                 return;
             }
 
-            ClientesModel modelo = new ClientesModel();
+            if (txtContrasena.Text != txtRepetirContrasena.Text)
+            {
+                txtContrasena.Focus();
+                MessageBox.Show("Las contraseñas no coinciden");
+                return;
+            }
+
+            UsuariosModel modelo = new UsuariosModel();
 
             if (sender.ToString() == "System.Windows.Forms.Button, Text: Modificar")
             {
-                if (int.TryParse(txtIdCliente.Text, out int IdCliente))
+                if (int.TryParse(txtIdUsuario.Text, out int IdUsuario))
                 {
-                    if (IdCliente > 0)
+                    if (IdUsuario > 0)
                     {
-                        modelo.Id_cliente = IdCliente;
+                        modelo.Id_usuario = IdUsuario;
                     }
                     else
                     {
-                        txtIdCliente.Focus();
-                        MessageBox.Show("El campo ID_Cliente debe contener un número entero mayor a 0");
+                        txtIdUsuario.Focus();
+                        MessageBox.Show("El campo ID_Usuario debe contener un número entero mayor a 0");
                         return;
                     }
                 }
                 else
                 {
-                    txtIdCliente.Focus();
-                    MessageBox.Show("El campo ID_Cliente está vacío o no tiene un valor numérico entero");
+                    txtIdUsuario.Focus();
+                    MessageBox.Show("El campo ID_Usuario está vacío o no tiene un valor numérico entero");
                     return;
                 }
             }
 
-            modelo.Cliente = txtCliente.Text;
-            modelo.Domicilio = txtDomicilio.Text;
+            modelo.Usuario = txtUsuario.Text;
+            modelo.Contrasena = txtContrasena.Text;
+            modelo.Correo = txtCorreo.Text;
             modelo.Celular = Celular.ToString();
 
             data.Guardar(modelo);
 
-            txtIdCliente.Clear();
-            txtCliente.Clear();
-            txtDomicilio.Clear();
+            txtIdUsuario.Clear();
+            txtUsuario.Clear();
+            txtContrasena.Clear();
+            txtRepetirContrasena.Clear();
+            txtCorreo.Clear();
             txtCelular.Clear();
 
             btnBuscar_Click(sender, e);
@@ -118,13 +128,13 @@ namespace ARQ_SW_Tarea_3.Views
         //ELiminar
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtIdCliente.Text, out int id))
+            if (int.TryParse(txtIdUsuario.Text, out int id))
             {
                 data.Eliminar(id);
                 btnBuscar_Click(sender, e);
             }
             else
-                MessageBox.Show("El campo ID_Venta está vacío o no tiene un valor numérico");
+                MessageBox.Show("El campo ID_Usuario está vacío o no tiene un valor numérico");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

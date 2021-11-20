@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ARQ_SW_Tarea_3.Views
 {
-    public partial class FrmClientesReportes : Form
+    public partial class FrmUsuariosReportes : Form
     {
-        ClientesRerpotesController data = new ClientesRerpotesController();
+        UsuariosRerpotesController data = new UsuariosRerpotesController();
         string archivo;
-        public FrmClientesReportes()
+        public FrmUsuariosReportes()
         {
             InitializeComponent();
         }

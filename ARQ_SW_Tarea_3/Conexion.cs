@@ -15,7 +15,7 @@ namespace ARQ_SW_Tarea_3
         {
             try
             {
-                cnn = new SqlConnection("Data Source=MM70-DESKTOP;Initial Catalog=Tienda;Integrated Security=True;");
+                cnn = new SqlConnection("Data Source=MM70-DESKTOP;Initial Catalog=Ferreteria;Integrated Security=True;");
                 cnn.Open();
             }
             catch (Exception e)

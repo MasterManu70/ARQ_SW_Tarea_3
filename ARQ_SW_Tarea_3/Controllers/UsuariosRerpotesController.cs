@@ -8,37 +8,37 @@ using System.Threading.Tasks;
 
 namespace ARQ_SW_Tarea_3.Controllers
 {
-    class ClientesRerpotesController : ClientesController
+    class UsuariosRerpotesController : UsuariosController
     {
-        string archivo = Directory.GetCurrentDirectory() + "\\ReporteClientes.html";
-        List<ClientesModel> lista;
+        string archivo = Directory.GetCurrentDirectory() + "\\ReporteUsuarios.html";
+        List<UsuariosModel> lista;
 
         public String Reporte()
         {
             StreamWriter temp = new StreamWriter(archivo);
 
             //Inicio del archivo
-            temp.WriteLine("<html> REPORTE DE CLIENTES");
+            temp.WriteLine("<html> REPORTE DE USUARIOS");
             temp.WriteLine("<table border=1 cellspacing=0>");
 
             //Columnas
             temp.WriteLine("<tr>" +
-                "<td>ID_Cliente</td>" +
-                "<td>Cliente</td>" +
-                "<td>Domicilio</td>" +
+                "<td>ID_Usuario</td>" +
+                "<td>Usuario</td>" +
+                "<td>Correo</td>" +
                 "<td>Celular</td>" +
                 "</tr>");
 
             //Filas
             lista = Consultar(0);
 
-            foreach (ClientesModel item in lista)
+            foreach (UsuariosModel item in lista)
             {
                 temp.WriteLine("<tr>");
 
-                temp.WriteLine("<td>" + item.Id_cliente + "</td>");
-                temp.WriteLine("<td>" + item.Cliente + "</td>");
-                temp.WriteLine("<td>" + item.Domicilio + "</td>");
+                temp.WriteLine("<td>" + item.Id_usuario + "</td>");
+                temp.WriteLine("<td>" + item.Usuario + "</td>");
+                temp.WriteLine("<td>" + item.Correo + "</td>");
                 temp.WriteLine("<td>" + item.Celular + "</td>");
 
                 temp.WriteLine("</tr>");

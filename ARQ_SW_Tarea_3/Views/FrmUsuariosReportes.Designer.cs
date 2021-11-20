@@ -1,7 +1,7 @@
 ﻿
 namespace ARQ_SW_Tarea_3.Views
 {
-    partial class FrmClientesReportes
+    partial class FrmUsuariosReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@ namespace ARQ_SW_Tarea_3.Views
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // FrmClientesReportes
+            // FrmUsuariosReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +99,9 @@ namespace ARQ_SW_Tarea_3.Views
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnGenerar);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "FrmClientesReportes";
+            this.Name = "FrmUsuariosReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Clientes";
+            this.Text = "Reporte de Usuarios";
             this.ResumeLayout(false);
 
         }
